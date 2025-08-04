@@ -1,0 +1,547 @@
+* Start Global Variables */ * {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    --main-color: #10cab7
+}
+
+:root {
+
+    --main-transition-duration: 0.3s;
+}
+
+body {
+    font-family: "Cairo", sans-serif;
+
+}
+
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+.container {
+    padding-left: 10px;
+    padding-right: 10px;
+    margin: auto;
+
+
+}
+
+a {
+    text-decoration: none;
+    color: black;
+
+
+
+}
+
+a:visited {
+    color: inherit;
+}
+
+button {
+    cursor: pointer;
+}
+
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+/* Small Screens */
+@media (min-width: 768px) {
+    .container {
+        width: 750px;
+    }
+
+}
+
+/* Medium Screens */
+@media (min-width: 992px) {
+    .container {
+        width: 970px;
+    }
+}
+
+/* Large Screens */
+@media (min-width: 1200px) {
+    .container {
+        width: 1170px;
+    }
+}
+
+@media (min-width: 1400px) {
+    .container {
+        width: 1370px;
+    }
+}
+
+/* End Global Variables */
+
+/* Start Header */
+.header {
+    margin-top: 22px;
+}
+
+.header .container {
+    display: flex;
+    justify-content: space-between;
+    background-color: white;
+    align-items: center;
+    position: relative;
+    gap: 5px
+}
+
+.header .menu {
+    align-items: center;
+    gap: 12px;
+    font-size: 22px;
+    display: none;
+
+}
+
+.header .menu .mini-menu {
+    cursor: pointer;
+}
+
+.header .menu .glass2 .media-glass {
+    transform: scaleX(-1);
+}
+
+.header .links .glass2 a:hover {
+    border-bottom: none;
+}
+
+.header .links .glass2 {
+    display: none;
+
+}
+
+@media (max-width: 992px) {
+    .header .menu {
+        display: inline-flex;
+
+    }
+}
+
+.header .links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 32px;
+
+}
+
+@media (max-width: 992px) {
+    .header .links .glass2 {
+        display: block;
+        order: 1;
+
+    }
+}
+
+.header .links a {
+    font-size: 13px;
+}
+
+.header .links a:hover {
+    border-bottom: 2px solid black;
+}
+
+@media (max-width:768px) {
+    .header .links {
+        gap: 14px;
+        margin-inline: 0;
+        font-size: 8px;
+    }
+}
+
+.header .links .microsoft-logo img {
+    width: 108px;
+}
+
+@media (max-width:768px) {
+    .header .links .microsoft-logo img {
+        width: 99px;
+    }
+}
+
+.header .links .glass {
+    transform: scaleX(-1);
+}
+
+.header .links .user i {
+    font-size: 28px;
+
+}
+
+.header .links .user-link:hover,
+.header .links .microsoft-logo a:hover {
+    border-bottom: none
+}
+
+@media (max-width: 992px) {
+    .header .links li {
+        display: none;
+    }
+
+    .header .links .microsoft-logo {
+        display: block;
+        order: 2;
+    }
+
+    .header .links .user {
+        display: block;
+        order: 3;
+    }
+
+}
+
+@media (max-width:768px) {
+    .header .links .user i {
+        font-size: 22px;
+    }
+}
+
+/* End Header */
+
+/* Start Moving Wheel */
+
+.moving-wheel {
+    padding-block: 30px;
+    display: flex;
+    position: relative;
+    overflow: hidden;
+
+}
+
+
+.slider-track {
+    display: flex;
+    width: 100%;
+    animation: slideLoop 12s ease-in-out infinite;
+}
+
+.slider-track .img {
+    width: 100%;
+    flex-shrink: 0;
+    position: relative;
+}
+
+.moving-wheel .mov-img {
+    width: 100%;
+    display: block;
+    object-fit: cover;
+}
+
+
+@media (max-width:768px) {
+    .moving-wheel .mov-img {
+        height: 350px;
+        object-position: 80%;
+    }
+
+}
+
+.slider-track .info {
+    position: absolute;
+    top: 50%;
+    left: 10%;
+    transform: translateY(-50%);
+    max-width: 40%;
+    z-index: 1;
+}
+
+
+
+@keyframes slideLoop {
+    0% {
+        transform: translateX(0%);
+    }
+
+    33.33% {
+        transform: translateX(0%);
+    }
+
+    44.44% {
+        transform: translateX(-100%);
+    }
+
+    77.77% {
+        transform: translateX(-100%);
+    }
+
+    88.88% {
+        transform: translateX(-200%);
+    }
+
+    100% {
+        transform: translateX(-200%);
+    }
+}
+
+@media (max-width:1083px) {
+    .moving-wheel {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+    }
+}
+
+.moving-wheel .img,
+.moving-wheel .img .mov-img {
+    width: 100%;
+    min-width: 100%;
+}
+
+.moving-wheel .img .info {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    max-width: 33%;
+}
+
+@media (max-width:1083px) {
+    .moving-wheel .img .info {
+        position: relative;
+        top: -50px;
+        left: 0;
+        transform: none;
+        max-width: 100%;
+        background-color: white;
+        padding: 32px;
+        box-shadow: 0 0px 19px 2px rgba(0, 0, 0, 0.15);
+    }
+
+}
+
+.moving-wheel .img .info h2 {
+    font-weight: bold;
+    font-size: 35px;
+}
+
+.moving-wheel .img .info p {
+    line-height: 1.5
+}
+
+.moving-wheel .img .info button {
+    background-color: #0067B8;
+    margin: 8px 0px;
+    padding: 10px 12px;
+    color: white;
+    font-size: 16px;
+    font-weight: lighter;
+    border: none;
+}
+
+/* End Moving Wheel */
+
+/* Start Microsoft Family */
+
+.microsoft-family .container,
+.business .business-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 22px;
+}
+
+.microsoft-family .card {
+    box-shadow: 0 0px 19px 2px rgba(0, 0, 0, 0.15);
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.microsoft-family .card img {
+    max-width: 100%;
+}
+
+.microsoft-family .card .card-info {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    padding: 20px;
+}
+
+.microsoft-family .card .card-info h3 {
+    font-size: 1.5rem;
+    margin-bottom: .75rem;
+
+
+}
+
+.microsoft-family .card .card-info p {
+    margin-bottom: 1rem;
+    flex-grow: 1;
+}
+
+.microsoft-family .card .card-info button {
+    background-color: #0067B8;
+    margin: 8px 0px;
+    padding: 10px 12px;
+    color: white;
+    font-size: 16px;
+    font-weight: lighter;
+    border: none;
+    align-self: flex-start;
+}
+
+/* End Microsoft Family */
+
+/* Start One note */
+.one-note .container {
+    padding-block: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+}
+
+.one-note img {
+    width: 100%;
+}
+
+.one-note .info {
+
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    max-width: 33%;
+    left: 64%;
+
+}
+
+.one-note .info h2 {
+    font-weight: bold;
+    font-size: 35px;
+    color: white;
+}
+
+.one-note .info p {
+    color: white;
+    line-height: 1.7;
+}
+
+.one-note .info button {
+    background-color: #0067B8;
+    margin: 8px 0px;
+    padding: 10px 12px;
+    color: white;
+    font-size: 16px;
+    font-weight: lighter;
+    border: none;
+}
+
+/* End one Note */
+
+/* Start Business Cards */
+.business h2 {
+    font-size: 2.5rem;
+
+}
+
+
+
+.business .card {
+    box-shadow: 0 0px 19px 2px rgba(0, 0, 0, 0.15);
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.business .card img {
+    max-width: 100%;
+}
+
+.business .card .card-info {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    padding: 20px;
+}
+
+.business .card .card-info h3 {
+    font-size: 1.5rem;
+    margin-bottom: .75rem;
+
+
+}
+
+.business .card .card-info p {
+    margin-bottom: 1rem;
+    flex-grow: 1;
+}
+
+.business .card .card-info button {
+    background-color: #0067B8;
+    margin: 8px 0px;
+    padding: 10px 12px;
+    color: white;
+    font-size: 16px;
+    font-weight: lighter;
+    border: none;
+    align-self: flex-start;
+}
+
+/* End Business Cards */
+
+.follow-pages .container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    margin-block: 50px;
+
+}
+
+.follow-pages a {
+    display: none;
+}
+
+/* Start Footer */
+.footer {
+
+    width: 100%;
+    background-color: rgb(239, 239, 239);
+
+
+}
+
+
+.footer .container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+
+
+
+}
+
+
+.footer .foot-card:last-of-type {
+    grid-column: 5/8;
+}
+
+@media (max-width:940px) {
+    .footer .foot-card:last-of-type {
+        grid-column: unset;
+    }
+}
+
+
+.footer .foot-card a {
+    color: rgb(123, 120, 120);
+    font-size: 12px;
+}
+
+.footer .foot-card ul li a {
+    display: inline-block;
+    margin-bottom: 10px
+}
+
+.footer .foot-card a:hover {
+    border-bottom: 2px solid black;
+
+}
+
+/* End Footer */
