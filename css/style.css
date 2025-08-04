@@ -457,6 +457,8 @@ ul {
         transform: none;
         max-width: 100%;
         background-color: white;
+        box-shadow: 0 0px 19px 2px rgba(0, 0, 0, 0.15);
+        padding: 10px;
 
     }
 
