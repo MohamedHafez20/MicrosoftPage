@@ -413,6 +413,19 @@ ul {
 
 }
 
+@media (max-width:768px) {
+    .one-note .container {
+        flex-direction: column;
+    }
+
+    .one-note .info {
+        position: static;
+        transform: none;
+        max-width: 100%;
+
+    }
+}
+
 .one-note .info h2 {
     font-weight: bold;
     font-size: 35px;
@@ -432,6 +445,29 @@ ul {
     font-size: 16px;
     font-weight: lighter;
     border: none;
+}
+
+@media (max-width:768px) {
+    .one-note .container {
+        flex-direction: column;
+    }
+
+    .one-note .info {
+        position: static;
+        transform: none;
+        max-width: 100%;
+        background-color: white;
+
+    }
+
+    .one-note .info h2 {
+        color: black;
+
+    }
+
+    .one-note .info p {
+        color: black;
+    }
 }
 
 /* End one Note */
